@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="calculator">
+            <input type="text" name="number1" readonly>
+            <div class="keyboard">
+                <button type="button" name="C" id="sign">C</button>
+                <button type="button" name="+" id="sign">+</button>
+                <button type="button" name="%" id="sign">%</button>
+                <button type="button" name="X" id="sign">X</button>
+                <button type="button" name="7" id="number">7</button>
+                <button type="button" name="8" id="number">8</button>
+                <button type="button" name="9" id="number">9</button>
+                <button type="button" name="-" id="sign">-</button>
+                <button type="button" name="4" id="number">4</button>
+                <button type="button" name="5" id="number">5</button>
+                <button type="button" name="6" id="number">6</button>
+                <button type="button" name="+" id="sign">+</button>
+                <button type="button" name="1" id="number">1</button>
+                <button type="button" name="2" id="number">2</button>
+                <button type="button" name="3" id="number">3</button>
+                <button type="button" name="=" id="equal">=</button>
+                <button type="button" name="0" id="zero">0</button>
+                <button type="button" name="." id="sign">.</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let display = document.querySelector("input");
+        let buttons = document.querySelectorAll("button");
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                let value = this.innerText;
+
+
+                if (value === "C") {
+                    display.value = "";
+                }
+
+
+                else if (value === "=") {
+                    try {
+                        let result = eval(display.value);
+                        display.value = result;
+                    } catch {
+                        display.value = "Error";
+                    }
+                }
+
+
+                else if (value === "X") {
+                    display.value += "*";
+                }
+
+
+                else {
+                    display.value += value;
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
