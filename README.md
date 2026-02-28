@@ -37,4 +37,4 @@ calculator/
 
 ## 👨‍💻 Author
 
-Your Name
+Nedelin Grudev
